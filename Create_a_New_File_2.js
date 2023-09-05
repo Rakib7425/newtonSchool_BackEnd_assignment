@@ -1,18 +1,31 @@
-const fs = require("fs/promises");
+const fs = require("fs");
 
 const fileName = "myfile.txt";
 const fileContent = "Newton School";
 
-const writeFile = async (fileName, fileContent) => {
-	//Write your code here
-	//Don't change function name
+// Function to check if a file exists
+const fileExists = (fileName) => {
 	try {
-		await fs.writeFile(fileName, fileContent);
-		console.log(`File "${fileName}" has been written.`);
-	} catch (error) {
-		console.error(`Error writing to file "${fileName}": ${error.message}`);
+		fs.accessSync(fileName, fs.constants.F_OK);
+		return true;
+	} catch (err) {
+		return false;
 	}
 };
+// Function to create a new file with fileContent
+const writeFile = (fileName, fileContent) => {
+	try {
+		if (fileExists(fileName)) {
+			console.log(`${fileName} already exists. Skipping write operation`);
+		} else {
+			fs.writeFileSync(fileName, fileContent);
+			console.log(`File ${fileName} created and data written successfully!`);
+		}
+	} catch (err) {
+		console.error(`Error creating file ${fileName}: ${err}`);
+	}
+};
+// writeFile(fileName, fileContent);
 module.exports = writeFile;
 
 /**
