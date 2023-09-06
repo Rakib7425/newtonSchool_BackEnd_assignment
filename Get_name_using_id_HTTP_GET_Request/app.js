@@ -30,13 +30,16 @@ app.get("/api/v1/names/:id", (req, res) => {
 		if (!product) {
 			return res.status(404).json({ status: "failed", message: "Not found!" });
 		} else if (product) {
-			// const productName = product.name;
 			res.status(200).json({
 				status: "success",
 				message: "Product Name fetched successfully",
 				data: {
-					[product.name]: product,
-					// product.name: product,
+					id: product.id,
+					name: product.name,
+
+					// name: { id: product.id, name: product.name },
+					// [product.name]: { id: product.id, name: product.name },
+					// product,
 				},
 			});
 		}
