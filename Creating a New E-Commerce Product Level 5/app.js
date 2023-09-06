@@ -16,7 +16,6 @@ app.post("/api/v1/products", (req, res) => {
 	console.log(body);
 	res.status(201).json({
 		status: "Success",
-
 		message: "Product added successfully",
 		data: {
 			newProduct: body,
