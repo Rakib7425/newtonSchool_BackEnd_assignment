@@ -1,0 +1,302 @@
+[
+    {
+        "id": 1,
+        "name": "Impact ",
+        "price": 2800,
+        "quantity": 19
+    },
+    {
+        "id": 2,
+        "name": "Wheel",
+        "price": 2500,
+        "quantity": 47
+    },
+    {
+        "id": 3,
+        "name": "Ariel",
+        "price": 3000,
+        "quantity": 0
+    },
+    {
+        "id": 4,
+        "name": "Impact ",
+        "price": 2800,
+        "quantity": 0
+    },
+    {
+        "id": 5,
+        "name": "High-Quality Headphones",
+        "price": 150,
+        "quantity": 20
+    },
+    {
+        "id": 6,
+        "name": "Portable Charger",
+        "price": 40,
+        "quantity": 25
+    },
+    {
+        "id": 7,
+        "name": "Gaming Laptop",
+        "price": 1500,
+        "quantity": 5
+    },
+    {
+        "id": 8,
+        "name": "Smart TV",
+        "price": 600,
+        "quantity": 12
+    },
+    {
+        "id": 9,
+        "name": "Fitness Tracker",
+        "price": 80,
+        "quantity": 18
+    },
+    {
+        "id": 10,
+        "name": "Coffee Maker",
+        "price": 60,
+        "quantity": 15
+    },
+    {
+        "id": 11,
+        "name": "Bluetooth Speaker",
+        "price": 40,
+        "quantity": 27
+    },
+    {
+        "id": 12,
+        "name": "Wireless Earbuds",
+        "price": 100,
+        "quantity": 15
+    },
+    {
+        "id": 13,
+        "name": "Desk Chair",
+        "price": 120,
+        "quantity": 8
+    },
+    {
+        "id": 14,
+        "name": "Stainless Steel Water Bottle",
+        "price": 20,
+        "quantity": 35
+    },
+    {
+        "id": 15,
+        "name": "Blender",
+        "price": 50,
+        "quantity": 14
+    },
+    {
+        "id": 16,
+        "name": "Digital Camera",
+        "price": 300,
+        "quantity": 10
+    },
+    {
+        "id": 17,
+        "name": "Home Theater System",
+        "price": 400,
+        "quantity": 7
+    },
+    {
+        "id": 18,
+        "name": "Laptop Stand",
+        "price": 25,
+        "quantity": 18
+    },
+    {
+        "id": 19,
+        "name": "Hiking Backpack",
+        "price": 70,
+        "quantity": 12
+    },
+    {
+        "id": 20,
+        "name": "Wireless Keyboard",
+        "price": 35,
+        "quantity": 20
+    },
+    {
+        "id": 21,
+        "name": "Smartwatch",
+        "price": 120,
+        "quantity": 9
+    },
+    {
+        "id": 22,
+        "name": "Coffee Grinder",
+        "price": 30,
+        "quantity": 25
+    },
+    {
+        "id": 23,
+        "name": "Portable Bluetooth Printer",
+        "price": 90,
+        "quantity": 15
+    },
+    {
+        "id": 24,
+        "name": "Toaster Oven",
+        "price": 40,
+        "quantity": 16
+    },
+    {
+        "id": 25,
+        "name": "Wireless Router",
+        "price": 50,
+        "quantity": 12
+    },
+    {
+        "id": 26,
+        "name": "Smart Thermostat",
+        "price": 70,
+        "quantity": 10
+    },
+    {
+        "id": 27,
+        "name": "Electric Kettle",
+        "price": 30,
+        "quantity": 20
+    },
+    {
+        "id": 28,
+        "name": "Digital Alarm Clock",
+        "price": 15,
+        "quantity": 30
+    },
+    {
+        "id": 29,
+        "name": "Desk Lamp",
+        "price": 20,
+        "quantity": 22
+    },
+    {
+        "id": 30,
+        "name": "External Hard Drive",
+        "price": 80,
+        "quantity": 14
+    },
+    {
+        "id": 31,
+        "name": "Wireless Earphones",
+        "price": 70,
+        "quantity": 18
+    },
+    {
+        "id": 32,
+        "name": "Gaming Keyboard",
+        "price": 60,
+        "quantity": 11
+    },
+    {
+        "id": 33,
+        "name": "Drones",
+        "price": 200,
+        "quantity": 7
+    },
+    {
+        "id": 34,
+        "name": "Smart Speaker",
+        "price": 100,
+        "quantity": 8
+    },
+    {
+        "id": 35,
+        "name": "Yoga Mat",
+        "price": 20,
+        "quantity": 24
+    },
+    {
+        "id": 36,
+        "name": "Cookware Set",
+        "price": 120,
+        "quantity": 6
+    },
+    {
+        "id": 37,
+        "name": "Digital Drawing Tablet",
+        "price": 150,
+        "quantity": 10
+    },
+    {
+        "id": 38,
+        "name": "Smart Lock",
+        "price": 90,
+        "quantity": 15
+    },
+    {
+        "id": 39,
+        "name": "Wearable Camera",
+        "price": 70,
+        "quantity": 12
+    },
+    {
+        "id": 40,
+        "name": "Mini Fridge",
+        "price": 80,
+        "quantity": 8
+    },
+    {
+        "id": 41,
+        "name": "Air Purifier",
+        "price": 100,
+        "quantity": 10
+    },
+    {
+        "id": 42,
+        "name": "Cordless Vacuum Cleaner",
+        "price": 150,
+        "quantity": 7
+    },
+    {
+        "id": 43,
+        "name": "Wireless Security Camera",
+        "price": 80,
+        "quantity": 12
+    },
+    {
+        "id": 44,
+        "name": "Electric Scooter",
+        "price": 250,
+        "quantity": 5
+    },
+    {
+        "id": 45,
+        "name": "Smart Scale",
+        "price": 30,
+        "quantity": 18
+    },
+    {
+        "id": 46,
+        "name": "Cordless Phone",
+        "price": 40,
+        "quantity": 15
+    },
+    {
+        "id": 47,
+        "name": "Portable Monitor",
+        "price": 120,
+        "quantity": 10
+    },
+    {
+        "id": 48,
+        "name": "Wireless Charging Pad",
+        "price": 20,
+        "quantity": 20
+    },
+    {
+        "id": 49,
+        "name": "Bluetooth Headset",
+        "price": 40,
+        "quantity": 22
+    },
+    {
+        "id": 50,
+        "name": "Electric Toothbrush",
+        "price": 25,
+        "quantity": 30
+    }
+]
