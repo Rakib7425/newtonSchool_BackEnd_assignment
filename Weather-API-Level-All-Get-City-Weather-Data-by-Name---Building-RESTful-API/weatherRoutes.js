@@ -60,4 +60,33 @@ router.get("/forecast/city/:name", async (req, res) => {
 	}
 });
 
+// Level 3: Get City Weather Data by ZipCode
+router.get("/city/zipcode/:code", async (req, res) => {
+	// TODO: Implement this function
+	try {
+		const code = req.params.code;
+		const zipData = await weatherController.getWeatherDataByZipCode(code);
+		// console.log(zipData);
+		if (!!zipData) {
+			res.status(200).json({
+				status: "success",
+				message: "Weather data retrieved",
+				data: zipData.forecast,
+			});
+		} else {
+			res.status(404).json({
+				status: "error",
+				message: "ZipCode not found",
+				error: "ZipCode not found",
+			});
+		}
+	} catch (error) {
+		res.status(404).json({
+			status: "error",
+			message: "ZipCode not found",
+			error: "ZipCode not found",
+		});
+	}
+});
+
 module.exports = router;

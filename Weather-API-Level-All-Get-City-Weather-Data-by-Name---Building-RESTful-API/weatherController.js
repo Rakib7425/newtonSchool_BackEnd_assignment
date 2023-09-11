@@ -66,7 +66,17 @@ async function getForecastDataByName(cityName) {
 	return fetchedData.forecast;
 }
 
+// Level 3: Get City Weather Data by ZipCode
+async function getWeatherDataByZipCode(zipCode) {
+	// TODO: Implement this function
+	// console.log(zipCode);
+	const zipData = data.find((item) => item.zipCode == zipCode);
+	// console.log(zipData);
+	return zipData;
+}
+
 module.exports = {
 	getWeatherDataByName,
 	getForecastDataByName,
+	getWeatherDataByZipCode,
 };
