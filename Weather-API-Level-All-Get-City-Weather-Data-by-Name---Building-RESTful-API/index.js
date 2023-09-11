@@ -3,7 +3,7 @@ const weatherRoutes = require("./weatherRoutes");
 const app = express();
 
 //Router Middlewares
-app.use(express.json());
+// app.use(express.json());
 app.use("/weather", weatherRoutes);
 
 app.listen(3000, () => {
