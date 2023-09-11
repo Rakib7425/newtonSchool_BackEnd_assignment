@@ -6,18 +6,22 @@ const { MongoClient } = require("mongodb");
 dotenv.config();
 
 //connect to DB
+// const startServer = async () => {
 
-const startServer = async () => {
-	const client = await MongoClient.connect(
-		"mongodb+srv://newtonAssignment:newtonAssignment@newton-backend.jkrszgc.mongodb.net/",
-		{ useNewUrlParser: true, useUnifiedTopology: true }
-	);
-	const coll = client.db("sample_guides").collection("planets");
-	// const cursor = coll.find();
-	// const result = await cursor.toArray();
-	// console.log(result);
-	// await client.close();
-};
+// const client = MongoClient.connect(
+// 	"mongodb+srv://newtonAssignment:newtonAssignment@newton-backend.jkrszgc.mongodb.net/",
+// 	{ useNewUrlParser: true, useUnifiedTopology: true }
+// ).then((res) => {
+// 	console.log("Mongo running.....");
+// 	console.log(res.db());
+// });
+
+// const db = client.db("sample_guides").collection("planets");
+// const cursor = coll.find();
+// const result = await cursor.toArray();
+// console.log(result);
+// await client.close();
+// };
 
 // startServer();
 
