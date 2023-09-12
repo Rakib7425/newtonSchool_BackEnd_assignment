@@ -11,7 +11,7 @@ const updateFile = async (fileName, fileContent) => {
 	}
 };
 
-// module.exports = updateFile;
+module.exports = updateFile;
 
 // Uses
 // const updateFile = require('./updateFile');

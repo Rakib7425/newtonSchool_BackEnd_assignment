@@ -15,6 +15,7 @@ async function getDataFromDatabase() {
 async function saveDataToDatabase(data) {
 	return new Promise((resolve, reject) => {
 		const jsonData = JSON.stringify(data);
+
 		fs.writeFile("./data.json", jsonData, (err) => {
 			if (err) {
 				reject(err);
@@ -75,8 +76,38 @@ async function getWeatherDataByZipCode(zipCode) {
 	return zipData;
 }
 
+// Level 4: Post Weather Alerts
+async function saveWeatherAlert(body) {
+	// TODO: Implement this function
+	// Find the city data by city name
+	const { city, humidity, date } = body;
+
+	const cityName = body.city.toLowerCase();
+	const avlCity = data.find((item) => item.city.toLowerCase() === cityName);
+
+	if (!avlCity) {
+		return false;
+	} else {
+		const alert = {
+			city,
+			humidity,
+			date,
+			// date: new Date().toLocaleString(),
+		};
+
+		if (!avlCity.alerts) {
+			avlCity.alerts = [];
+		}
+		avlCity.alerts.push(alert);
+		await saveDataToDatabase(data);
+		return true;
+		// console.log(`Alert saved for ${cityName}: ${body.city}`);
+	}
+}
+
 module.exports = {
 	getWeatherDataByName,
 	getForecastDataByName,
 	getWeatherDataByZipCode,
+	saveWeatherAlert,
 };
