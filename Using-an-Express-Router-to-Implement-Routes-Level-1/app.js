@@ -40,9 +40,8 @@ async function saveDataToDatabase(data) {
 router.post("/api/v1/product", (req, res) => {
 	try {
 		//Write your code here
-		let length = product.length;
-		let lastProduct = product[length - 1];
-		let newId = lastProduct.id + 1;
+		let newId = product[product.length - 1].id + 1;
+
 		let { title, price } = req.body;
 		// console.log(newId, lastProduct);
 
