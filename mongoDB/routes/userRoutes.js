@@ -14,7 +14,9 @@ router.post("/register", async (req, res) => {
 			// console.log(dbResponse);
 			res.status(201).send({ message: "User created successfully", data: dbResponse });
 		} else {
-			res.status(400).send({ message: "All  fields are mandatory. " });
+			res.status(400).send({
+				message: " All  fields are mandatory. (Username, email and password)",
+			});
 		}
 	} catch (error) {
 		console.error(error);
