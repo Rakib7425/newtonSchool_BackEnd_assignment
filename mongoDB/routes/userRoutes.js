@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
 		}
 	} catch (error) {
 		console.error(error);
-		res.status(400).json({ error: "Bad request", duplicateData: error.keyValue });
+		res.status(400).json({ message: "Bad request", duplicateData: error.keyValue });
 	}
 });
 
