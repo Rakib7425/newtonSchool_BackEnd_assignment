@@ -37,7 +37,7 @@ app.use(express.json());
 const apiVersion = "/api/v1";
 
 app.use(`${apiVersion}/user`, userRoutes);
-app.use(`${apiVersion}/product`, productRoutes);
+app.use(`${apiVersion}/products`, productRoutes);
 
 app.listen(port, () => {
 	console.log(`Server is running on port ${port}`);
