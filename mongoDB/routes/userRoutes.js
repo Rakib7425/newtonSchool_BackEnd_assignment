@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
+const userControllers = require("../controllers/userControllers");
 
 router.post("/register", async (req, res) => {
 	try {
@@ -26,14 +27,7 @@ router.post("/register", async (req, res) => {
 
 router.get("/getAllUsers", async (req, res) => {
 	try {
-		// userControllers.getAllUsers;
-		const users = await User.find({});
-		res.status(200).json({
-			status: "success",
-			data: {
-				users,
-			},
-		});
+		userControllers.getAllUsers(req, res);
 	} catch (error) {
 		console.error(error);
 		res.status(400).send({ error: "Server error" });

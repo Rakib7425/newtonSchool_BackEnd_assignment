@@ -3,7 +3,7 @@ const User = require("../models/userModel");
 const registerUser = async (req, res) => {
 	try {
 		const { username, email, password } = req.body;
-		console.log(username, email, password);
+		// console.log(username, email, password);
 
 		if (username && email && password) {
 			const newUser = new User({ username, email, password });
@@ -19,10 +19,11 @@ const registerUser = async (req, res) => {
 		res.status(400).json({ message: "Bad request", duplicateUser: error.keyValue });
 	}
 };
+
 const getAllUsers = async (req, res) => {
 	try {
 		const users = await User.find({});
-		res.status(201).json({
+		res.status(200).json({
 			status: "success",
 			data: {
 				users,
@@ -32,6 +33,7 @@ const getAllUsers = async (req, res) => {
 		res.send(error);
 	}
 };
+
 module.exports = {
 	registerUser,
 	getAllUsers,
