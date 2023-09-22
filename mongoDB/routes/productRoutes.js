@@ -55,34 +55,38 @@ router.post("/addProduct", async (req, res) => {
 		const lastProduct = await Product.findOne({}).sort({ id: -1 });
 		let bodyId = req.body.id;
 		let newId;
-		// console.log(lastProduct);
+
 		if (bodyId) {
-			console.log(bodyId);
-			if (await Product.findOne({ id: bodyId })) {
+			let duplicateId = await Product.findOne({ id: bodyId }).count();
+
+			if (!duplicateId) {
 				newId = bodyId;
+			} else {
+				newId = lastProduct.id + 1;
 			}
 		} else {
 			newId = lastProduct.id + 1;
 		}
+		const { id, ...newBodyExceptId } = req.body;
+
 		const body = {
 			id: newId,
-			...req.body,
+			...newBodyExceptId,
 		};
 		const products = new Product(body);
 		const dbResponse = await products.save();
 
-		res.status(200).send({
-			// newId,
+		res.status(201).send({
+			newId,
 			message: "data saved  successfully.",
 			data: dbResponse,
 		});
 
-		console.log(newId);
-		//
+		// console.log(newId);
 	} catch (error) {
-		// console.log(error);
+		console.log(error);
 		res.status(500).send({
-			message: "id is not mandatory",
+			message: "an error occurred!",
 			error,
 		});
 	}

@@ -41,4 +41,33 @@ router.get("/getAllUsers", async (req, res) => {
 	}
 });
 
+router.get("/user/:userId", async (req, res) => {
+	try {
+		// userControllers.getAllUsers;
+		const { userId } = req.params;
+		// userId * 1;
+		// let paramId = Number(userId);
+
+		const dbResponse = await User.findOne({ _id: userId });
+		// console.log(dbResponse);
+		if (!dbResponse) {
+			return res.status(404).json({
+				message: `no user found, id : ${userId}`,
+				status: "not found",
+			});
+		}
+		res.status(200).json({
+			status: "success",
+			data: {
+				user: dbResponse,
+			},
+		});
+	} catch (error) {
+		// console.error(error);
+		res.status(400).send({
+			message: "Server error",
+			error,
+		});
+	}
+});
 module.exports = router;
