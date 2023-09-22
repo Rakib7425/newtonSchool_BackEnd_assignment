@@ -1,9 +1,6 @@
-// routes/userRoutes.js
-const express = require("express");
-const router = express.Router();
 const User = require("../models/userModel");
 
-router.post("/register", async (req, res) => {
+const registerUser = async (req, res) => {
 	try {
 		const { username, email, password } = req.body;
 		console.log(username, email, password);
@@ -18,27 +15,24 @@ router.post("/register", async (req, res) => {
 			});
 		}
 	} catch (error) {
-		res.status(500).send({
-			message: "Error occurred",
-			error,
-		});
+		console.error(error);
+		res.status(400).json({ message: "Bad request", duplicateUser: error.keyValue });
 	}
-});
-
-router.get("/getAllUsers", async (req, res) => {
+};
+const getAllUsers = async (req, res) => {
 	try {
-		// userControllers.getAllUsers;
 		const users = await User.find({});
-		res.status(200).json({
+		res.status(201).json({
 			status: "success",
 			data: {
 				users,
 			},
 		});
 	} catch (error) {
-		console.error(error);
-		res.status(400).send({ error: "Server error" });
+		res.send(error);
 	}
-});
-
-module.exports = router;
+};
+module.exports = {
+	registerUser,
+	getAllUsers,
+};

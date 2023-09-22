@@ -1,4 +1,9 @@
 const mongoose = require("mongoose");
+// {
+// 	"username":"RsM",
+// 	"email":"abc@abc.com",
+// 	"password":"abc"
+// }
 
 const userSchema = new mongoose.Schema({
 	username: {
@@ -20,6 +25,6 @@ const userSchema = new mongoose.Schema({
 	},
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("users", userSchema);
 
 module.exports = User;
