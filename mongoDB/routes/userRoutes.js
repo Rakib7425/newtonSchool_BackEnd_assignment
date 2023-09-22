@@ -1,4 +1,3 @@
-// routes/userRoutes.js
 const express = require("express");
 const router = express.Router();
 const User = require("../models/userModel");
@@ -45,11 +44,9 @@ router.get("/user/:userId", async (req, res) => {
 	try {
 		// userControllers.getAllUsers;
 		const { userId } = req.params;
-		// userId * 1;
-		// let paramId = Number(userId);
 
 		const dbResponse = await User.findOne({ _id: userId });
-		// console.log(dbResponse);
+
 		if (!dbResponse) {
 			return res.status(404).json({
 				message: `no user found, id : ${userId}`,
