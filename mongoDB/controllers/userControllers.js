@@ -33,8 +33,33 @@ const getAllUsers = async (req, res) => {
 		res.send(error);
 	}
 };
+//
+
+const getUser = async (req, res) => {
+	try {
+		const { userId } = req.params;
+
+		const dbResponse = await User.findOne({ _id: userId });
+
+		if (!dbResponse) {
+			return res.status(404).json({
+				message: `no user found, id : ${userId}`,
+				status: "not found",
+			});
+		}
+		res.status(200).json({
+			status: "success",
+			data: {
+				user: dbResponse,
+			},
+		});
+	} catch (error) {
+		res.send(error);
+	}
+};
 
 module.exports = {
 	registerUser,
 	getAllUsers,
+	getUser,
 };
