@@ -20,31 +20,57 @@ app.use(express.json());
 // app.use("/api/products2", product2);
 // app.use("/api/products3", product3);
 
+// app.get("/", async function (req, res) {
+// 	// https://my.newtonschool.co/playground/project/j8xactw291cg
+// 	var name = req.query.name,
+// 		count = 0;
+// 	result = await User.find({});
+// 	if (typeof name === "undefined") {
+// 		count = result.length;
+// 		res.send(JSON.stringify(count));
+// 	} else {
+// 		name = name.toLowerCase();
+// 		for (var i = 0; i < result.length; i++) {
+// 			var len = name.length,
+// 				match = 1,
+// 				cur_name = result[i]["name"].toLowerCase();
+// 			if (cur_name.length >= len) {
+// 				for (var j = 0; j < len; j++) {
+// 					if (cur_name[j] != name[j]) {
+// 						match = 0;
+// 						break;
+// 					}
+// 				}
+// 			}
+// 			count += match;
+// 		}
+// 		res.send(JSON.stringify(count));
+// 	}
+// });
+
 app.get("/", async function (req, res) {
-	// https://my.newtonschool.co/playground/project/j8xactw291cg
-	var name = req.query.name,
-		count = 0;
-	result = await users.find({});
-	if (typeof name === "undefined") {
-		count = result.length;
-		res.send(JSON.stringify(count));
-	} else {
-		name = name.toLowerCase();
-		for (var i = 0; i < result.length; i++) {
-			var len = name.length,
-				match = 1,
-				cur_name = result[i]["name"].toLowerCase();
-			if (cur_name.length >= len) {
-				for (var j = 0; j < len; j++) {
-					if (cur_name[j] != name[j]) {
-						match = 0;
-						break;
-					}
-				}
-			}
-			count += match;
-		}
-		res.send(JSON.stringify(count));
+	try {
+		const { offset = 1, limit = 5 } = req.query;
+		const users = await User.find()
+			.limit(limit * 1)
+			.skip((offset - 1) * limit);
+
+		const count = users.length;
+
+		res.status(200).json({
+			status: "success",
+			data: {
+				count,
+				users: users,
+			},
+		});
+		//
+	} catch (err) {
+		res.status(404).json({
+			message: "Users Not Found",
+			status: "Error",
+			error: err,
+		});
 	}
 });
 
